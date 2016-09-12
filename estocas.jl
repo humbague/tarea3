@@ -18,13 +18,13 @@ function proyeccion(dim::Int)
     for i in 1:dim
         A+=kron(vecs[:,i],daga(vecs[:,i]))
     end
-    chop(A)
+    # chop(A)
     return A
 end
 
 function prueba(M)
     dim=size(M)[1]
-    A=chop(eye(dim)-M)
+    A=eye(dim)-M
     b=0
     for i in A
         b+=abs(i)
