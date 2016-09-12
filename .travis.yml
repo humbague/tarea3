@@ -1,4 +1,4 @@
 language: julia
 julia:
   - 0.4.6
-script: julia 1.jl
+script: julia estocas.jl
