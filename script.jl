@@ -22,8 +22,10 @@ function proyeccion(dim::Int)
     return A
 end
 
-function prueba(M)
-    dim=size(M)[1]
+#La función prueba probará si la matriz obtenida a través de la función proyeccion es unitaria
+function prueba(dim::Int)
+    MM=hermitian(dim)
+    M=proyeccion(dim)
     A=eye(dim)-M
     b=0
     for i in A
@@ -34,5 +36,6 @@ function prueba(M)
     end
     return true
 end
-
-@test prueba(proyeccion(3))
+    
+@test ishermitian(hermitian(3))    
+@test prueba(3)
